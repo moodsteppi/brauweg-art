@@ -11,6 +11,9 @@
     <rect x="52" y="104" width="136" height="110" stroke="#4a9c78"/>
     <rect x="72" y="212" width="96" height="42" stroke="#5ea0f0"/>
     <rect x="166" y="112" width="72" height="102" stroke="#e2b64f"/>
+    <!-- Augen: neuer Platz. Liegt beim Zeichnen UNTER dem Hut, damit ein
+         breiter Hutrand darueberfallen kann. -->
+    <rect x="78" y="66" width="84" height="30" stroke="#f0a03c"/>
   </g>
 
   <!-- Der Pinguin, maßgleich zu PinguinBasis in packages/client/src/pinguin.tsx -->
