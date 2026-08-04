@@ -57,7 +57,19 @@ Repositories:
 mkdir -p ~/bildwerkzeug && cd ~/bildwerkzeug && npm init -y && npm i sharp
 ```
 
-Dann umwandeln, hier am Beispiel eines Kartenblatts:
+**Das Skript liegt hier bei: `wandeln.mjs`.** Auf einem eingerichteten
+Rechner steht es unter `~/bildwerkzeug/wandeln.mjs`; geht es dort verloren,
+ist diese Datei die Vorlage.
+
+```bash
+node ~/bildwerkzeug/wandeln.mjs <quelle> <ziel> [karten|szene|wappen]
+```
+
+Es prueft von selbst, ob ein Alphakanal verlorengegangen ist, und warnt, wenn
+die Ergebnisse verdaechtig gross geblieben sind — beides Fehler, die hier
+schon passiert sind.
+
+Von Hand ginge es auch, hier am Beispiel eines Kartenblatts:
 
 ```bash
 node -e '
