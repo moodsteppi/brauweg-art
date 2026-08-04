@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 256" width="480" height="512">
+  <!-- Passvorlage fuer die Pinguin-Ausstattung. Siehe docs/ASSETS-PINGUIN.md.
+       Der Rahmen ist 240 x 256; geliefert wird auf 480 x 512 (genau 2x). -->
+  <rect width="240" height="256" fill="#e8eef1"/>
+
+  <!-- Zonen. Sie sind die Angabe, gegen die gemalt wird - im gelieferten
+       Bild duerfen sie NICHT erscheinen. -->
+  <g fill="none" stroke-width="1.5" stroke-dasharray="4 3">
+    <rect x="0" y="0" width="240" height="256" stroke="#a678f2"/>
+    <rect x="58" y="8" width="124" height="66" stroke="#c2564c"/>
+    <rect x="52" y="104" width="136" height="110" stroke="#4a9c78"/>
+    <rect x="72" y="212" width="96" height="42" stroke="#5ea0f0"/>
+    <rect x="166" y="112" width="72" height="102" stroke="#e2b64f"/>
+  </g>
+
+  <!-- Der Pinguin, maßgleich zu PinguinBasis in packages/client/src/pinguin.tsx -->
+  <ellipse cx="120" cy="150" rx="70" ry="86" fill="#2b3a45"/>
+  <ellipse cx="52" cy="152" rx="18" ry="46" fill="#1e2a33" transform="rotate(-8 52 152)"/>
+  <ellipse cx="188" cy="152" rx="18" ry="46" fill="#1e2a33" transform="rotate(8 188 152)"/>
+  <ellipse cx="120" cy="158" rx="50" ry="72" fill="#f4f7f8"/>
+  <circle cx="120" cy="80" r="54" fill="#2b3a45"/>
+  <ellipse cx="120" cy="92" rx="40" ry="42" fill="#f4f7f8"/>
+  <circle cx="101" cy="80" r="8.5" fill="#1e2a33"/>
+  <circle cx="139" cy="80" r="8.5" fill="#1e2a33"/>
+  <circle cx="103.5" cy="77" r="3" fill="#fff"/>
+  <circle cx="141.5" cy="77" r="3" fill="#fff"/>
+  <path d="M120 92 L138 104 L120 114 L102 104 Z" fill="#f0a03c"/>
+  <path d="M120 114 L138 104 L120 106 Z" fill="#d4832a"/>
+  <ellipse cx="97" cy="238" rx="20" ry="10" fill="#f0a03c"/>
+  <ellipse cx="143" cy="238" rx="20" ry="10" fill="#f0a03c"/>
+
+  <g font-family="Helvetica" font-size="8" font-weight="bold">
+    <text x="62" y="20" fill="#c2564c">HUT 58,8 - 182,74</text>
+    <text x="56" y="116" fill="#2f7a5c">OBERTEIL 52,104 - 188,214</text>
+    <text x="76" y="224" fill="#2f6dc0">SCHUHE 72,212 - 168,254</text>
+    <text x="150" y="108" fill="#8a6a10">HAND 166,112 - 238,214</text>
+    <text x="4" y="250" fill="#7b5ea7">AURA = ganzer Rahmen 240 x 256</text>
+  </g>
+</svg>
