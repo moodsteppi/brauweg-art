@@ -34,9 +34,20 @@ cd brauweg-art/3d
 
 Client-Dev-Server starten, dann:
 
-```
-http://localhost:5173/?dev=avatar
-```
+| Werkzeug | URL |
+|---|---|
+| Mütze auf Pinguin | `http://localhost:5173/?dev=avatar` |
+| Deckel auf Truhe | `http://localhost:5173/?dev=chest` |
 
 GLBs liegen auch unter `Brauweg-spielen/brauweg/packages/client/public/3d/`.
 Übergabe-Text für Anni: `brauweg/docs/UEBERGABE-ANNI.md`.
+
+## Truhe
+
+| Datei | Bedeutung |
+|---|---|
+| `chest/chest_bottom.glb` | Korpus, Boden auf Y=0, Breite ≈ 1 |
+| `chest/chest_top.glb` | Deckel, Unterkante Y=0 |
+| `chest/chest_normalize.json` | Startwerte für geschlossenen Deckel |
+
+Originale: `chest/pirate chest bottom 3d model.glb`, `chest/chest 3d  top model.glb`.
