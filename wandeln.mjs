@@ -23,9 +23,10 @@
 import { readdirSync, statSync, mkdirSync, existsSync } from 'node:fs';
 import { join, basename } from 'node:path';
 import { createRequire } from 'node:module';
+import { homedir } from 'node:os';
 
 const require = createRequire(import.meta.url);
-const sharp = require(join(process.env.HOME, 'bildwerkzeug/node_modules/sharp'));
+const sharp = require(join(homedir(), 'bildwerkzeug/node_modules/sharp'));
 
 /** Einstellungen je Sorte. Die Zahlen stammen aus gemessenen Läufen. */
 const ARTEN = {
