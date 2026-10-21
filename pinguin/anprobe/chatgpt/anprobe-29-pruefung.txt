@@ -1,0 +1,17 @@
+Prüfung der 29 Pinguin-Anproben
+
+Status: 29 einzelne PNG-Anproben erzeugt, alle gewünschten Dateinamen vorhanden. Erzeugung mit dem integrierten image_gen-Werkzeug. Sieben Motive wurden mit gezielten Korrekturen erneut erzeugt.
+
+Verbleibende Abweichungen von der Bestellung:
+- Alle 29 Dateien haben 1254 x 1254 Pixel. Angefordert waren 1024 x 1024; das Bildwerkzeug hat diese Größe nicht eingehalten.
+- Der Pinguin ist nicht pixelidentisch mit der Vorlage: Gesicht, Körperkonturen, Beleuchtung und Textur wurden zum Teil neu gerendert.
+- Beim Partyhut bleiben Kopf und Gesicht nach unten versetzt.
+- Bei allen fünf gehaltenen Gegenständen ist die rechte Flosse gegenüber der Vorlage gebeugt oder verkürzt. Die Gegenstände sind in den ausgewählten Varianten rechts im Bild.
+- Bei den Schuhen verändert sich der untere Körperrand.
+- Die Meisterrobe zeigt eine blaue Front statt einer deutlich offenen Vorderseite.
+- Der grüne Hintergrund ist nicht überall exakt #00FF00 und enthält leichte Farb- und Texturabweichungen.
+
+Die Dateien sind Anprobe-Entwürfe, keine freigegebenen, passgenauen Overlay-Ebenen. Der vorgesehene reine Differenzschnitt gegen die nackte Vorlage ist damit nicht zuverlässig. Keine WebP-Ebenen, Größenkompression oder Prüfung auf rotem Grund vorgenommen; diese Schritte betreffen die anschließende Verarbeitung.
+
+Die vier vorherigen Motive (Krone, Frack, Pulli und Gummistiefel) sind im gleichen outputs-Ordner vorhanden, aber nicht Teil dieses ZIP-Pakets.
+
