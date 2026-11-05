@@ -19,7 +19,7 @@ if (process.argv[1]?.endsWith('erzeugen.mjs')) {
     const ziel = join(ROH, a.name + '.png');
     if (existsSync(ziel)) { console.log('da', a.name); continue; }
     const bilder = [PING];
-    if (a.ref) bilder.push(join(ROH, a.ref + '.png'));
+    if (a.ref) bilder.push(a.ref === 'logo' ? join(HOME, 'flyingbro-erzeugung/probe/ref-logo.png') : join(ROH, a.ref + '.png'));
     const args = ['exec', '--skip-git-repo-check', '--sandbox', 'read-only'];
     for (const b of bilder) args.push('--image', `"${b}"`);
     args.push('-');

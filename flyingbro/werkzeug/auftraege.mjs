@@ -3,22 +3,31 @@ export const STIL = `Style: match the attached Brauweg knight penguin reference 
 
 export const STIL_SZENE = `Style: match the attached Brauweg knight penguin reference in rendering — stylized 3D-rendered mobile game art, soft gradients, one warm light source from the top left, not flat vector, not photorealistic. Original design for our own game "Brauweg"; do not imitate any existing game's art. No text, no logo, no frame, no UI.`;
 
-const PINGUIN = 'a Brauweg penguin (black back and head, white belly and face, orange beak and orange feet, big friendly eyes)';
+// Die drei Bros sind die Pinguine aus dem Logo (icon-512.png, zweite Vorlage der Ruhebilder);
+// Aussehen nach docs/werbung/tiktok-serien/figuren.md und docs/SPEZIFIKATION-FLYINGBRO.md.
+// Pelle ist rot-orange und rundlich — genau dort droht die Naehe zum Vorbild, daher das ausdrueckliche
+// "penguin silhouette, no eyebrows, no head tuft" in PINGUIN_FORM.
+const PINGUIN_FORM = 'clearly a penguin silhouette (upright oval body, two flippers, orange feet, cream-white face mask and belly), NOT a round ball-shaped bird, no eyebrows, no feather tuft on the head, no clothing or hat';
 
 export const bro = {
-  schnell: `${PINGUIN}, slim and streamlined, wearing a turquoise leather aviator cap with brass goggles and a short turquoise scarf — the FAST one, light and agile build`,
-  schwer: `${PINGUIN}, big, heavy and very round, wearing thick dark steel plate armor with rivets and a rounded steel helmet with the visor up, small bronze trims — the HEAVY one, chunky and solid`,
-  teilt: `${PINGUIN}, small and chubby, wearing a violet knitted bobble hat with three pom-poms and a violet-and-white striped scarf — the SPLITTING one, playful and mischievous`,
+  pelle: `PELLE, the red-orange penguin from the attached logo (second image): a short chubby penguin with a red-orange back, head and flippers, cream-white belly and face, bright orange beak and feet, a small white plus-shaped gamepad cross printed on his left flipper, huge eager friendly eyes, wide grin — ${PINGUIN_FORM}`,
+  malve: `MALVE, the purple penguin from the attached logo (second image): a tall slim penguin with a deep violet-purple back, head and flippers, cream-white belly and face, orange beak and feet, wearing round thin glasses, half-lidded clever eyes, a confident slight smile — ${PINGUIN_FORM.replace(', no clothing or hat', ', no hat; the glasses are her only accessory')}`,
+  tjark: `TJARK, the turquoise penguin from the attached logo (second image): a stocky penguin with a bright teal-turquoise back, head and flippers, cream-white belly and face, orange beak and feet, four round white game-controller buttons printed on one flipper, wild excited eyes, cocky wide grin — ${PINGUIN_FORM}`,
 };
-const flugZusatz = {
-  schnell: ', goggles pulled down over the eyes, scarf streaming behind',
-  schwer: ', tucked into a compact armored cannonball shape, visor down',
-  teilt: ', with two faint translucent violet copies of itself fanning out above and below as if about to split into three',
+const ruheZusatz = {
+  pelle: 'standing upright, waving cheerfully with one flipper, the gamepad cross on the flipper clearly visible',
+  malve: 'standing upright, flippers crossed calmly over her belly, glasses glinting',
+  tjark: 'standing upright, one flipper raised in a thumbs-up-like gesture, the four controller buttons on the flipper clearly visible',
+};
+export const faehigkeit = {
+  pelle: { name: 'rutsch', pose: 'BELLY SLIDE: lying completely flat on his belly, sliding fast to the right like a toboggan, head forward and slightly raised, both flippers pressed back along the body, feet trailing behind, a few small snow/dust puffs under the belly, gleeful face. The body is long and flat (about 2.3 times as wide as tall). Landscape 1536x1024 canvas.' },
+  malve: { name: 'gleit', pose: 'GLIDE: gliding through the air to the right with both flippers spread wide like wings, body horizontal and calm, feet tucked back, glasses on, focused serene expression. Seen from the side, slightly from below. Landscape 1536x1024 canvas.' },
+  tjark: { name: 'eisblock', pose: 'ICE BLOCK: frozen inside a solid cube of clear light-blue ice, seen straight from the front (the cube is an exact square, edges beveled and frosty, a few frost cracks at the corners). Tjark is curled up inside, his face clearly visible through the ice, cheeky surprised grin, eyes looking right. Square 1024x1024.' },
 };
 export const giraffe = {
   klein: 'a small cartoon baby giraffe, very short neck, oversized round head, stubby legs, cheeky grin — the SMALL opponent',
   mittel: 'an adult cartoon giraffe of medium height, smug teasing grin, slightly plump body — the MEDIUM opponent',
-  gross: 'a big tall burly cartoon giraffe wearing a small golden crown, arrogant boss grin — the BIG opponent',
+  gross: 'the LONG-NECK giraffe: same species, colors and fur as the medium giraffe in the second attached image, but with an EXTREMELY long neck — the neck alone is about twice as long as the body is tall, so the head sits far above the body (total height about 2.1 times the body length); a sturdy body, a small golden crown, a proud slightly snooty smile (cheeky, not evil) — the BIG opponent',
 };
 export const block = {
   holz: 'warm light-brown wooden building block made of planks with visible wood grain and slightly beveled edges, small iron nails at the corners',
@@ -28,12 +37,13 @@ export const block = {
 
 const auftraege = [];
 for (const [k, b] of Object.entries(bro)) {
-  auftraege.push({ name: `bro-${k}-ruhe`, art: 'figur', bild: `Subject: ${b}. Pose: standing upright and relaxed, wings at the sides, confident friendly smile, full body, three-quarter view facing right. Square 1024x1024.` });
-  auftraege.push({ name: `bro-${k}-flug`, art: 'figur', ref: `bro-${k}-ruhe`, bild: `Subject: the SAME character as in the second attached image (identical colors, gear and proportions): ${b}. Pose: in mid-flight, launched through the air to the right, body stretched forward, wings swept back, determined focused face${flugZusatz[k]}. Side view. Square 1024x1024.` });
+  auftraege.push({ name: `bro-${k}-ruhe`, art: 'figur', ref: 'logo', bild: `Subject: ${b}. Translate the flat logo character into the 3D-rendered style of the first image. Pose: ${ruheZusatz[k]}, full body, three-quarter view facing RIGHT. Square 1024x1024.` });
+  const f = faehigkeit[k];
+  auftraege.push({ name: `bro-${k}-${f.name}`, art: 'figur', ref: `bro-${k}-ruhe`, bild: `Subject: the SAME character as in the second attached image (identical colors, markings, proportions${k === 'malve' ? ', glasses' : ''}): ${b}. Pose: ${f.pose} Facing RIGHT.` });
 }
 for (const [k, g] of Object.entries(giraffe)) {
   const format = k === 'klein' ? 'Square 1024x1024.' : 'Portrait 1024x1536.';
-  auftraege.push({ name: `giraffe-${k}-steht`, art: 'figur', bild: `Subject: ${g}, same stylized 3D look as the penguin reference (soft fur texture, orange-brown patches, small ossicone horns). Pose: standing on all four legs, full body, three-quarter view facing LEFT, looking left and teasing. ${format}` });
+  auftraege.push({ name: `giraffe-${k}-steht`, art: 'figur', ...(k === 'gross' ? { ref: 'giraffe-mittel-steht' } : {}), bild: `Subject: ${g}, same stylized 3D look as the penguin reference (soft fur texture, orange-brown patches, small ossicone horns). Pose: standing on all four legs, full body, three-quarter view facing LEFT, looking left and teasing. ${format}` });
   auftraege.push({ name: `giraffe-${k}-getroffen`, art: 'figur', ref: `giraffe-${k}-steht`, bild: `Subject: the SAME giraffe as in the second attached image (identical colors, patches, ${k === 'gross' ? 'crown, ' : ''}size and proportions), now just hit: dizzy swirly eyes, a red bump on the head, three small yellow stars circling the head, body tilted and wobbling, tongue sticking out, still standing, facing LEFT. ${format}` });
 }
 for (const [k, b] of Object.entries(block)) {
