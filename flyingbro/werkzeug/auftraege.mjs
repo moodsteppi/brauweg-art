@@ -38,6 +38,8 @@ export const block = {
 const auftraege = [];
 for (const [k, b] of Object.entries(bro)) {
   auftraege.push({ name: `bro-${k}-ruhe`, art: 'figur', ref: 'logo', bild: `Subject: ${b}. Translate the flat logo character into the 3D-rendered style of the first image. Pose: ${ruheZusatz[k]}, full body, three-quarter view facing RIGHT. Square 1024x1024.` });
+  // Flugpose: Auftrag (Ruhe + Flug je Bro) und Spezifikation (Ruhe, Flug, Faehigkeit, Sieg) verlangen sie getrennt von der Faehigkeit.
+  auftraege.push({ name: `bro-${k}-flug`, art: 'figur', ref: `bro-${k}-ruhe`, bild: `Subject: the SAME character as in the second attached image (identical colors, markings, proportions${k === 'malve' ? ', glasses' : ''}): ${b}. Pose: FLIGHT right after being launched: flying through the air to the right, body stretched out horizontally and slightly tilted upward like a little torpedo, head forward, both flippers pressed back along the body (NOT spread like wings), feet trailing behind, an excited determined face. No motion lines, no dust, no background. Facing RIGHT. Landscape 1536x1024 canvas.` });
   const f = faehigkeit[k];
   auftraege.push({ name: `bro-${k}-${f.name}`, art: 'figur', ref: `bro-${k}-ruhe`, bild: `Subject: the SAME character as in the second attached image (identical colors, markings, proportions${k === 'malve' ? ', glasses' : ''}): ${b}. Pose: ${f.pose} Facing RIGHT.` });
 }
